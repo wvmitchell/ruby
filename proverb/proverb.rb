@@ -1,12 +1,12 @@
-# The Proverb Builder
 class Proverb
+
   def initialize(*items)
     @qualifier = items[-1][:qualifier] if items[-1].class == Hash
     @items = @qualifier ? items[0..-2] : items
   end
 
   def to_s
-    stanza = ''
+    stanza = ""
     @items.each_cons(2) do |pair|
       stanza += "For want of a #{pair[0]} the #{pair[1]} was lost.\n"
     end
@@ -22,4 +22,5 @@ class Proverb
       "And all for the want of a #{@items[0]}."
     end
   end
+
 end

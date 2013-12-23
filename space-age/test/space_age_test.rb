@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative 'space_age'
+require 'minitest/pride'
+require_relative '../lib/space_age'
 
 class SpaceAgeTest < MiniTest::Unit::TestCase
 
@@ -9,13 +10,11 @@ class SpaceAgeTest < MiniTest::Unit::TestCase
   end
 
   def test_age_in_earth_years
-    skip
     age = SpaceAge.new(1_000_000_000)
     assert_equal 31.69, age.on_earth
   end
 
   def test_age_in_mercury_years
-    skip
     age = SpaceAge.new(2_134_835_688)
     assert_equal 67.65, age.on_earth
     assert_equal 280.88, age.on_mercury
