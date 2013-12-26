@@ -14,9 +14,9 @@ class SpaceAge
                             }
 
   planet_seconds_per_year.each do |planet, year_seconds|
-    send :define_method, "on_#{planet}" , lambda {
+    define_method "on_#{planet}" do
       (seconds.to_f / year_seconds.to_f).round(2)
-    }
+    end
   end
 
   def initialize(seconds)
