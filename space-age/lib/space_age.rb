@@ -1,6 +1,6 @@
 class SpaceAge
 
-  attr_reader :age_in_seconds
+  attr_reader :seconds
 
   planet_seconds_per_year = {
                               mercury: 7600526,
@@ -18,15 +18,11 @@ class SpaceAge
   end
 
   def initialize(seconds)
-    @age_in_seconds = seconds
-  end
-
-  def seconds
-    age_in_seconds
+    @seconds = seconds
   end
 
   def age(planet_year_seconds)
-    (age_in_seconds.to_f / planet_year_seconds.to_f).round(2)
+    (seconds.to_f / planet_year_seconds.to_f).round(2)
   end
 
 end
