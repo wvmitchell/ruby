@@ -7,6 +7,7 @@ class Gigasecond
   end
 
   def add_time
+    @date
   end
 
 end
