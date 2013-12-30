@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'minitest/pride'
+require 'minitest/emoji'
 require_relative '../lib/secret_handshake'
 
 class SecretHandshakeTest < MiniTest::Unit::TestCase
