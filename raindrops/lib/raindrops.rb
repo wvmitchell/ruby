@@ -15,12 +15,11 @@ class Raindrops
 
   def generate_string(primes)
     primes.collect do |prime|
-      case prime
-      when 3
+      if prime == 3
         "Pling"
-      when 5
+      elsif prime == 5
         "Plang"
-      when 7
+      else
         "Plong"
       end
     end.join
