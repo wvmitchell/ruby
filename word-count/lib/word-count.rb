@@ -1,6 +1,7 @@
 class Phrase
 
-  def initialize(arg)
+  def initialize(words)
+    @words = words
   end
 
   def word_count
