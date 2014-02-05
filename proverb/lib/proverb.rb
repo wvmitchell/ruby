@@ -8,7 +8,9 @@ class Proverb
   def to_s
     stanza = ''
     @items.each_cons(2) do |pair|
-      stanza += "For want of a #{pair[0]} the #{pair[1]} was lost.\n"
+      first_object = pair[0]
+      second_object = pair[1]
+      stanza += "For want of a #{first_object} the #{second_object} was lost.\n"
     end
     stanza += final_line
   end
