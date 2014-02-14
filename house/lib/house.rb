@@ -6,6 +6,10 @@ class House
     start + middle.take(lines-1).reverse.join + finish
   end
 
+  def verses(start, finish)
+    (start..finish).to_a.collect {|line| verse(line)+"\n"}.join
+  end
+
   def middle
     [
       'malt that lay in the ',
