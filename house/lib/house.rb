@@ -1,16 +1,20 @@
 class House
 
-  def verse(lines)
+  def verse(num_qualifiers)
     start = "This is the "
     finish = "house that Jack built.\n"
-    start + middle.take(lines-1).reverse.join + finish
+    start + middle(num_qualifiers-1) + finish
+  end
+
+  def middle(num_qualifiers)
+    middle_qualifiers.take(num_qualifiers).reverse.join
   end
 
   def verses(start, finish)
     (start..finish).to_a.collect {|line| verse(line)+"\n"}.join
   end
 
-  def middle
+  def middle_qualifiers
     [
       'malt that lay in the ',
       'rat that ate the ',
