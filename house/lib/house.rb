@@ -1,21 +1,6 @@
 class House
 
-  def verse(num_qualifiers)
-    start = "This is the "
-    finish = "house that Jack built.\n"
-    start + middle(num_qualifiers-1) + finish
-  end
-
-  def middle(num_qualifiers)
-    middle_qualifiers.take(num_qualifiers).reverse.join
-  end
-
-  def verses(start, finish)
-    (start..finish).to_a.collect {|line| verse(line)+"\n"}.join
-  end
-
-  def middle_qualifiers
-    [
+  MIDDLE_QUALIFIERS = [
       'malt that lay in the ',
       'rat that ate the ',
       'cat that killed the ',
@@ -28,6 +13,19 @@ class House
       'farmer sowing his corn that kept the ',
       'horse and the hound and the horn that belonged to the '
     ]
+
+  def verse(num_qualifiers)
+    start = "This is the "
+    finish = "house that Jack built.\n"
+    start + middle(num_qualifiers-1) + finish
+  end
+
+  def middle(num_qualifiers)
+    MIDDLE_QUALIFIERS.take(num_qualifiers).reverse.join
+  end
+
+  def verses(start, finish)
+    (start..finish).to_a.collect {|line| verse(line)+"\n"}.join
   end
 
 end
