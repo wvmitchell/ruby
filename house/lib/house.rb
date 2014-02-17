@@ -20,8 +20,8 @@ class House
     start + middle(num_qualifiers-1) + finish
   end
 
-  def middle(num_qualifiers)
-    MIDDLE_QUALIFIERS.take(num_qualifiers).reverse.join
+  def middle(middle_qualifiers)
+    MIDDLE_QUALIFIERS.take(middle_qualifiers).reverse.join
   end
 
   def verses(start, finish)
