@@ -62,7 +62,6 @@ O W O O O O O O
   end
 
   def test_yet_another_string_representation
-    skip
     queens = Queens.new(white: [4, 3], black: [3, 4])
     board = <<-BOARD.chomp
 O O O O O O O O
