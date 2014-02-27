@@ -1,5 +1,3 @@
-require 'pry'
-
 class Bst
 
   def initialize(initial_data)
