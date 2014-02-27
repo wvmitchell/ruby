@@ -23,7 +23,7 @@ class Queens
   end
 
   def attack?
-    white[0] == black[0]
+    white[0] == black[0] || white[1] == black[1]
   end
 
 end
