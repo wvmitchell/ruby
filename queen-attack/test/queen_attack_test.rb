@@ -97,19 +97,16 @@ O O O O O O O O
   end
 
   def test_can_attack_on_other_diagonal
-    skip
     queens = Queens.new(white: [0, 6], black: [1, 7])
     assert queens.attack?
   end
 
   def test_can_attack_on_yet_another_diagonal
-    skip
     queens = Queens.new(white: [4, 1], black: [6, 3])
     assert queens.attack?
   end
 
   def test_can_attack_on_a_diagonal_slanted_the_other_way
-    skip
     queens = Queens.new(white: [6, 1], black: [1, 6])
     assert queens.attack?
   end
