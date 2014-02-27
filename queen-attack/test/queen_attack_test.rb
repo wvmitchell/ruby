@@ -77,7 +77,6 @@ O O O O O O O O
   end
 
   def test_cannot_attack
-    skip
     queens = Queens.new(white: [2, 3], black: [4, 7])
     assert !queens.attack?
   end

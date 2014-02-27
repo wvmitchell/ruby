@@ -22,4 +22,7 @@ class Queens
     board
   end
 
+  def attack?
+  end
+
 end
