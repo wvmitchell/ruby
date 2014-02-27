@@ -10,10 +10,16 @@ class Queens
   end
 
   def to_s
-    board
+    board.collect do |row|
+      row.join(' ')
+    end.join("\n")
   end
 
   def draw_board
+    board = 8.times.collect {Array.new(8, 'O')}
+    board[white[0]][white[1]] = 'W'
+    board[black[0]][black[1]] = 'B'
+    board
   end
 
 end
