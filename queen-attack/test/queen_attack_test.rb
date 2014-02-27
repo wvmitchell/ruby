@@ -26,14 +26,12 @@ class QueensTest < MiniTest::Unit::TestCase
   end
 
   def test_cannot_occupy_same_space
-    skip
     assert_raises ArgumentError do
       Queens.new(white: [2, 4], black: [2, 4])
     end
   end
 
   def test_string_representation
-    skip
     queens = Queens.new(white: [2, 4], black: [6, 6])
     board = <<-BOARD.chomp
 O O O O O O O O
