@@ -82,7 +82,6 @@ O O O O O O O O
   end
 
   def test_can_attack_on_same_row
-    skip
     queens = Queens.new(white: [2, 4], black: [2, 7])
     assert queens.attack?
   end
