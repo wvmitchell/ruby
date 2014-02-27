@@ -23,7 +23,19 @@ class Queens
   end
 
   def attack?
-    white[0] == black[0] || white[1] == black[1]
+    row_attack? || col_attack? || diagonal_attack?
+  end
+
+  def row_attack?
+    white[0] == black[0]
+  end
+
+  def col_attack?
+    white[1] == black[1]
+  end
+
+  def diagonal_attack?
+    (white[0]-black[0]).abs == (white[1]-black[1]).abs
   end
 
 end

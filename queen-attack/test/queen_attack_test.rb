@@ -92,7 +92,6 @@ O O O O O O O O
   end
 
   def test_can_attack_on_diagonal
-    skip
     queens = Queens.new(white: [1, 1], black: [6, 6])
     assert queens.attack?
   end
