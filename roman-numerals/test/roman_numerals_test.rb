@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative 'roman'
+require 'minitest/emoji'
+require_relative '../lib/roman_numerals'
 
 class RomanTest < MiniTest::Unit::TestCase
 
@@ -8,17 +9,14 @@ class RomanTest < MiniTest::Unit::TestCase
   end
 
   def test_2
-    skip
     assert_equal 'II', 2.to_roman
   end
 
   def test_3
-    skip
     assert_equal 'III', 3.to_roman
   end
 
   def test_4
-    skip
     assert_equal 'IV', 4.to_roman
   end
 
