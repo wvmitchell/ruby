@@ -42,7 +42,6 @@ class RomanTest < MiniTest::Unit::TestCase
   end
 
   def test_59
-    skip
     assert_equal 'LIX', 59.to_roman
   end
 

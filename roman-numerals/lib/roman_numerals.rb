@@ -1,15 +1,16 @@
 class Fixnum
 
-  ROMAN_CONSTANTS = {"I" => 1, "V" => 5}
-
   def to_roman
+    letters = []
     if self.edge_case
-      case self
-      when 4 then 'IV'
-      when 9 then 'IX'
+      if four?
+        letters << 'IV'
+      elsif nine?
+        letters << 'IX'
+      else
+        letters << 'XL' + (self%40).to_roman
       end
     else
-      letters = []
       tens = self / 10
       test = self % 10
       fives = test / 5
@@ -18,12 +19,12 @@ class Fixnum
       add_tens(letters, tens)
       add_fives(letters, fives)
       add_ones(letters, ones)
-      letters.join
     end
+    letters.join
   end
 
   def edge_case
-    self == 4 || self == 9
+    four? || nine? || forties?
   end
 
   private
@@ -38,6 +39,18 @@ class Fixnum
 
   def add_ones(letters, num)
     num.times { letters << 'I' }
+  end
+
+  def four?
+    self == 4
+  end
+
+  def nine?
+    self == 9
+  end
+
+  def forties?
+    self >= 40 && self < 50
   end
 
 end
