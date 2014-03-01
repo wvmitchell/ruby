@@ -10,9 +10,7 @@ class Queens
   end
 
   def to_s
-    board.collect do |row|
-      row.join(' ')
-    end.join("\n")
+    board.collect { |row| row.join(' ')}.join("\n")
   end
 
   def draw_board
