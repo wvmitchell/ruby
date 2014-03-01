@@ -2,35 +2,9 @@ class Fixnum
 
   def to_roman
     if self.edge_case
-      if four?
-        'IV'
-      elsif nine?
-        'IX'
-      elsif forties?
-        'XL' + (self-40).to_roman
-      elsif nineties?
-        'XC' + (self-90).to_roman
-      elsif fourhundreds?
-        'CD' + (self-400).to_roman
-      elsif ninehundreds?
-        'CM' + (self-900).to_roman
-      end
+      edge_roman
     else
-      if thousand_or_greater?
-        'M' + (self-1000).to_roman
-      elsif fivehundred_or_greater?
-        'D' + (self-500).to_roman
-      elsif onehundred_or_greater?
-        'C' + (self-100).to_roman
-      elsif fifty_or_greater?
-        'L' + (self-50).to_roman
-      elsif ten_or_greater?
-        'X' + (self-10).to_roman
-      elsif five_or_greater?
-        'V' + (self-5).to_roman
-      else
-        'I' * self
-      end
+      normal_roman
     end
   end
 
@@ -39,6 +13,40 @@ class Fixnum
   end
 
   private
+
+  def edge_roman
+   if four?
+     'IV'
+   elsif nine?
+     'IX'
+   elsif forties?
+     'XL' + (self-40).to_roman
+   elsif nineties?
+     'XC' + (self-90).to_roman
+   elsif fourhundreds?
+     'CD' + (self-400).to_roman
+   elsif ninehundreds?
+     'CM' + (self-900).to_roman
+   end
+  end
+
+  def normal_roman
+    if thousand_or_greater?
+      'M' + (self-1000).to_roman
+    elsif fivehundred_or_greater?
+      'D' + (self-500).to_roman
+    elsif onehundred_or_greater?
+      'C' + (self-100).to_roman
+    elsif fifty_or_greater?
+      'L' + (self-50).to_roman
+    elsif ten_or_greater?
+      'X' + (self-10).to_roman
+    elsif five_or_greater?
+      'V' + (self-5).to_roman
+    else
+      'I' * self
+    end
+  end
 
   def thousand_or_greater?
     self >= 1000
