@@ -1,39 +1,37 @@
 class Fixnum
 
   def to_roman
-    letters = []
     if self.edge_case
       if four?
-        letters << 'IV'
+        'IV'
       elsif nine?
-        letters << 'IX'
+        'IX'
       elsif forties?
-        letters << 'XL' + (self-40).to_roman
+        'XL' + (self-40).to_roman
       elsif nineties?
-        letters << 'XC' + (self-90).to_roman
+        'XC' + (self-90).to_roman
       elsif fourhundreds?
-        letters << 'CD' + (self-400).to_roman
+        'CD' + (self-400).to_roman
       elsif ninehundreds?
-        letters << 'CM' + (self-900).to_roman
+        'CM' + (self-900).to_roman
       end
     else
       if thousand_or_greater?
-        letters << 'M' + (self-1000).to_roman
+        'M' + (self-1000).to_roman
       elsif fivehundred_or_greater?
-        letters << 'D' + (self-500).to_roman
+        'D' + (self-500).to_roman
       elsif onehundred_or_greater?
-        letters << 'C' + (self-100).to_roman
+        'C' + (self-100).to_roman
       elsif fifty_or_greater?
-        letters << 'L' + (self-50).to_roman
+        'L' + (self-50).to_roman
       elsif ten_or_greater?
-        letters << 'X' + (self-10).to_roman
+        'X' + (self-10).to_roman
       elsif five_or_greater?
-        letters << 'V' + (self-5).to_roman
+        'V' + (self-5).to_roman
       else
-        letters << 'I' * self
+        'I' * self
       end
     end
-    letters.join
   end
 
   def edge_case
