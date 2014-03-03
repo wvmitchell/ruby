@@ -14,11 +14,11 @@ class Palindromes
     candidates = []
     (min_factor..max_factor).to_a.each do |i|
       (min_factor..max_factor).to_a.reverse.each do |j|
-        candidates << (i*j)
+        c = i*j
+        candidates << Palindrome.new(c) if palindrome?(c.to_s)
       end
     end
-
-    @generated = candidates.select {|candidate| palindrome?(candidate.to_s)}
+    @generated = candidates
     @generated.sort!
   end
 
@@ -38,26 +38,26 @@ class Palindromes
 
 end
 
-class Fixnum
+class Palindrome
+  include Comparable
+
+  attr_reader :number
+
+  def initialize(number)
+    @number = number
+  end
+
+  def <=>(other)
+    number <=> other.number
+  end
 
   def value
-    self
+    number
   end
 
   def factors
-    single_factors = self.prime_division.collect do |factor, exponent|
-      (0..exponent).to_a.collect do |exp|
-        factor ** exp
-      end
-    end.flatten
-
-    factor_pairs = []
-    single_factors.each_with_index do |factor, index|
-      factor_pairs << [factor, single_factors[-1 - index]]
-    end
-
-    factor_pairs.each {|pair| pair.sort!}
-    factor_pairs.uniq
+    single = (1..number).select {|n| number % n == 0}
+    single.zip single.reverse
   end
 
 end
