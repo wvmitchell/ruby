@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/emoji'
+require 'pry'
 require_relative '../lib/palindrome_products'
 
 class PalindromesTest < MiniTest::Unit::TestCase
@@ -8,12 +9,12 @@ class PalindromesTest < MiniTest::Unit::TestCase
     palindromes = Palindromes.new(max_factor: 9)
     palindromes.generate
     largest = palindromes.largest
+    binding.pry
     assert_equal 9, largest.value
     assert [[[3, 3], [1, 9]], [[1, 9], [3, 3]]].include? largest.factors
   end
 
   def test_largest_palindrome_from_double_digit_factors
-    skip
     palindromes = Palindromes.new(max_factor: 99, min_factor: 10)
     palindromes.generate
     largest = palindromes.largest
