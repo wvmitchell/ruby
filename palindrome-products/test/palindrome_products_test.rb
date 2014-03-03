@@ -9,7 +9,6 @@ class PalindromesTest < MiniTest::Unit::TestCase
     palindromes = Palindromes.new(max_factor: 9)
     palindromes.generate
     largest = palindromes.largest
-    binding.pry
     assert_equal 9, largest.value
     assert [[[3, 3], [1, 9]], [[1, 9], [3, 3]]].include? largest.factors
   end
@@ -19,6 +18,7 @@ class PalindromesTest < MiniTest::Unit::TestCase
     palindromes.generate
     largest = palindromes.largest
     assert_equal 9009, largest.value
+    binding.pry
     assert_equal [[91, 99]], largest.factors
   end
 

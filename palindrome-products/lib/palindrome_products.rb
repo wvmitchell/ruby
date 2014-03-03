@@ -13,16 +13,27 @@ class Palindromes
   def generate
     candidates = []
     (min_factor..max_factor).to_a.each do |i|
-      (max_factor..min_factor).to_a.each do |j|
-        canditates << i*j
+      (min_factor..max_factor).to_a.reverse.each do |j|
+        candidates << (i*j)
       end
     end
 
-    @generated = candidates
+    @generated = candidates.select {|candidate| palindrome?(candidate.to_s)}
+    @generated.sort!
   end
 
   def largest
     generated.last
+  end
+
+  private
+
+  def palindrome?(number)
+    if number.length == 1 || number.length == 0
+      true
+    else
+      number[0] == number[-1] && palindrome?(number[1..-2])
+    end
   end
 
 end
