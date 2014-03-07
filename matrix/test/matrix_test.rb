@@ -20,7 +20,6 @@ class MatrixTest < MiniTest::Unit::TestCase
   end
 
   def test_extract_other_row_again
-    skip
     matrix = Matrix.new("1 4 9\n16 25 36")
     assert_equal [16, 25, 36], matrix.rows[1]
   end
