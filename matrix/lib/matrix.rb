@@ -1,11 +1,13 @@
 class Matrix
 
+  attr_reader :rows
+
   def initialize(matrix_string)
     @rows = convert(matrix_string)
   end
 
-  def rows
-    @rows
+  def columns
+    rows.transpose
   end
 
   private
