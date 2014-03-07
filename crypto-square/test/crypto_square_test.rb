@@ -34,7 +34,6 @@ class CryptoTest < MiniTest::Unit::TestCase
   end
 
   def test_other_plaintext_segments
-    skip
     crypto = Crypto.new('ZOMG! ZOMBIES!!!')
     assert_equal ["zomg", "zomb", "ies"], crypto.plaintext_segments
   end
