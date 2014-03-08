@@ -18,4 +18,16 @@ class Crypto
     Math.sqrt(normalize_plaintext.length).ceil
   end
 
+  def ciphertext
+    plaintext_matrix.transpose.flatten.join
+  end
+
+  def plaintext_matrix
+    segments = plaintext_segments.collect {|seg| seg.split('')}
+    while segments.last.length < segments.first.length
+      segments.last << ''
+    end
+    segments
+  end
+
 end
