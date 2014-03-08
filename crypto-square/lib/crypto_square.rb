@@ -30,4 +30,9 @@ class Crypto
     segments
   end
 
+  def normalize_ciphertext
+    length = plaintext_matrix.length
+    ciphertext.scan(/.{1,#{length}}/).join(' ')
+  end
+
 end

@@ -49,13 +49,11 @@ class CryptoTest < MiniTest::Unit::TestCase
   end
 
   def test_normalized_ciphertext
-    skip
     crypto = Crypto.new('Madness, and then illumination.')
     assert_equal 'msemo aanin dninn dlaet ltshu i', crypto.normalize_ciphertext
   end
 
   def test_more_normalized_ciphertext
-    skip
     crypto = Crypto.new('Vampires are people too!')
     assert_equal 'vrela epems etpao oirpo', crypto.normalize_ciphertext
   end
