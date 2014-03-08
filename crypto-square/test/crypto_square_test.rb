@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'pry'
 require 'minitest/emoji'
 require_relative '../lib/crypto_square'
 
@@ -55,6 +56,6 @@ class CryptoTest < MiniTest::Unit::TestCase
 
   def test_more_normalized_ciphertext
     crypto = Crypto.new('Vampires are people too!')
-    assert_equal 'vrela epems etpao oirpo', crypto.normalize_ciphertext
+    assert_equal 'vrel aepe mset paoo irpo', crypto.normalize_ciphertext
   end
 end
