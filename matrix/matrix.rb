@@ -13,7 +13,8 @@ class Matrix
   private
 
   def convert(matrix_string)
-    matrix_string.split("\n").collect do |row|
+    string_rows = matrix_string.split("\n")
+    string_rows.collect do |row|
       row.split.collect(&:to_i)
     end
   end
