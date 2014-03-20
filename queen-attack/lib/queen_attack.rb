@@ -24,6 +24,8 @@ class Queens
     row_attack? || col_attack? || diagonal_attack?
   end
 
+  private
+
   def row_attack?
     white[0] == black[0]
   end

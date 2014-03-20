@@ -1,5 +1,3 @@
-require 'pry'
-
 class Hexadecimal
 
   attr_reader :hex, :decimal_values

@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/emoji'
+require 'pry'
 require_relative '../lib/food_chain'
 
 class FoodChainTest < MiniTest::Unit::TestCase
@@ -18,7 +19,6 @@ class FoodChainTest < MiniTest::Unit::TestCase
   end
 
   def test_spider
-    skip
     expected = "I know an old lady who swallowed a spider.\nIt wriggled and jiggled and tickled inside her.\n" +
       "She swallowed the spider to catch the fly.\n" +
       "I don't know why she swallowed the fly. Perhaps she'll die.\n"
