@@ -56,3 +56,26 @@ class Robot
   end
 
 end
+
+class Simulator
+
+  COMMANDS = {
+    "L" => :turn_left,
+    "R" => :turn_right,
+    "A" => :advance
+  }
+
+  def instructions(command_list)
+    command_list.chars.collect { |instruction| COMMANDS[instruction] }
+  end
+
+  def place(robot, options)
+    robot.at(options[:x], options[:y])
+    robot.orient(options[:direction])
+  end
+
+  def evaluate(robot, command_list)
+    instructions(command_list).each { |command| robot.send(command) }
+  end
+
+end
