@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative 'custom_set'
+require 'minitest/emoji'
+require_relative '../lib/custom_set'
 
 class CustomSetTest < MiniTest::Unit::TestCase
 
@@ -8,14 +9,12 @@ class CustomSetTest < MiniTest::Unit::TestCase
   end
 
   def test_delete
-    skip
     assert_equal CustomSet.new([1,3]), CustomSet.new([3,2,1]).delete(2)
     assert_equal CustomSet.new([1,2,3]), CustomSet.new([3,2,1]).delete(4)
     assert_equal CustomSet.new([1,2,3]), CustomSet.new([3,2,1]).delete(2.0)
   end
 
   def test_difference
-    skip
     assert_equal CustomSet.new([1,3]),
       CustomSet.new([1,2,3]).difference(CustomSet.new([2,4]))
 
