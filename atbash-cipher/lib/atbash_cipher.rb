@@ -1,24 +1,23 @@
 class Atbash
 
-  def self.encode(str)
-    base_encoding = base_encode(str)
-    space_delimit(base_encoding)
+  def self.encode(message)
+    space_delimit base_encode(message)
   end
 
   private
 
-  def self.normalize(str)
-    str.downcase.tr("^a-z0-9", "")
-  end
-
-  def self.base_encode(str)
-    normalize(str).chars.inject('') do |cipher, char|
+  def self.base_encode(message)
+    normalize(message).chars.inject('') do |cipher, char|
       cipher + cipher_legend[char]
     end
   end
 
-  def self.space_delimit(str)
-    str.scan(/.{1,5}/).join(" ")
+  def self.normalize(message)
+    message.downcase.tr("^a-z0-9", "")
+  end
+
+  def self.space_delimit(message)
+    message.scan(/.{1,5}/).join(" ")
   end
 
   def self.cipher_legend
@@ -30,4 +29,5 @@ class Atbash
     numbers = Hash[('0'..'9').zip ('0'..'9')]
     letters.merge numbers
   end
+
 end
