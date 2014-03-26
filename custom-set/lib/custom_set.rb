@@ -37,6 +37,10 @@ class CustomSet
     elements.length
   end
 
+  def to_list
+    elements
+  end
+
   def disjoint?(other)
     elements.sort & other.elements.sort == []
   end

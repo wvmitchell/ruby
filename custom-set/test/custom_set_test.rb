@@ -76,7 +76,6 @@ class CustomSetTest < MiniTest::Unit::TestCase
   end
 
   def test_to_list
-    skip
     assert_equal [], CustomSet.new.to_list.sort
     assert_equal [1,2,3], CustomSet.new([3,1,2]).to_list.sort
     assert_equal [1,2,3], CustomSet.new([3,1,2,1]).to_list.sort
