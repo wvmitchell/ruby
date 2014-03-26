@@ -33,6 +33,10 @@ class CustomSet
     CustomSet.new(elements.sort & other.elements.sort)
   end
 
+  def union(other)
+    CustomSet.new(elements.sort + other.elements.sort)
+  end
+
   def size
     elements.length
   end
