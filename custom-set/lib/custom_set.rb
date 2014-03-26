@@ -9,7 +9,7 @@ class CustomSet
 
   def delete(element)
     elements.delete_if do |test_element|
-      test_element == element && test_element.class == element.class
+      exact_match(test_element, element)
     end
     self
   end
@@ -28,7 +28,7 @@ class CustomSet
 
   def member?(element)
     elements.any? do |test_element|
-      test_element == element && test_element.class == element.class
+      exact_match(test_element, element)
     end
   end
 
@@ -39,6 +39,12 @@ class CustomSet
 
   def <=>(other)
     elements.sort <=> other.elements.sort
+  end
+
+  private
+
+  def exact_match(first, second)
+    first == second && first.class == second.class
   end
 
 end
