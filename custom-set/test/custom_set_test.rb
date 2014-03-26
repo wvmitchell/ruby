@@ -23,7 +23,6 @@ class CustomSetTest < MiniTest::Unit::TestCase
   end
 
   def test_disjoint?
-    skip
     assert CustomSet.new([1,2]).disjoint?(CustomSet.new([3,4]))
     refute CustomSet.new([1,2]).disjoint?(CustomSet.new([2,3]))
     assert CustomSet.new([1.0,2.0]).disjoint?(CustomSet.new([2,3]))
@@ -31,13 +30,11 @@ class CustomSetTest < MiniTest::Unit::TestCase
   end
 
   def test_empty
-    skip
     assert_equal CustomSet.new, CustomSet.new([1,2]).empty
     assert_equal CustomSet.new, CustomSet.new.empty
   end
 
   def test_intersection
-    skip
     assert_equal CustomSet.new([:a, :c]),
       CustomSet.new([:a, :b, :c]).intersection(CustomSet.new([:a, :c, :d]))
 
@@ -46,7 +43,6 @@ class CustomSetTest < MiniTest::Unit::TestCase
   end
 
   def test_member?
-    skip
     assert CustomSet.new([1,2,3]).member?(2)
     assert CustomSet.new(1..3).member?(2)
     refute CustomSet.new(1..3).member?(2.0)

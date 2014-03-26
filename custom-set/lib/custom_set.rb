@@ -3,7 +3,7 @@ class CustomSet
 
   attr_reader :elements
 
-  def initialize(elements)
+  def initialize(elements=[])
     @elements = elements
   end
 
@@ -15,7 +15,26 @@ class CustomSet
   end
 
   def difference(other)
-    self.class.new(elements.sort & other.elements.sort)
+    CustomSet.new(elements.sort - other.elements.sort)
+  end
+
+  def intersection(other)
+    CustomSet.new(elements.sort & other.elements.sort)
+  end
+
+  def disjoint?(other)
+    elements.sort & other.elements.sort == []
+  end
+
+  def member?(element)
+    elements.any? do |test_element|
+      test_element == element && test_element.class == element.class
+    end
+  end
+
+  def empty
+    @elements = []
+    self
   end
 
   def <=>(other)
