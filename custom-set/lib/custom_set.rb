@@ -20,6 +20,11 @@ class CustomSet
     self
   end
 
+  def empty
+    @elements = []
+    self
+  end
+
   def difference(other)
     CustomSet.new(elements.sort - other.elements.sort)
   end
@@ -42,9 +47,8 @@ class CustomSet
     end
   end
 
-  def empty
-    @elements = []
-    self
+  def subset?(other)
+    intersection(other) == other
   end
 
   def <=>(other)
