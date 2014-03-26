@@ -8,7 +8,6 @@ class OctalTest < MiniTest::Unit::TestCase
   end
 
   def test_octal_10_is_decimal_8
-    skip
     assert_equal 8, Octal.new("10").to_decimal
   end
 

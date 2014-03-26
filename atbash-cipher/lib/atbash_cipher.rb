@@ -1,12 +1,8 @@
 class Atbash
 
   def self.encode(str)
-    encoded = basic_encode(str)
-    if long_cipher(encoded)
-      complete_encode(encoded)
-    else
-      encoded
-    end
+    base_encoding = base_encode(str)
+    space_delimit(base_encoding)
   end
 
   private
@@ -15,18 +11,14 @@ class Atbash
     str.downcase.tr("^a-z0-9", "")
   end
 
-  def self.basic_encode(str)
+  def self.base_encode(str)
     normalize(str).chars.inject('') do |cipher, char|
       cipher + cipher_legend[char]
     end
   end
 
-  def self.complete_encode(str)
+  def self.space_delimit(str)
     str.scan(/.{1,5}/).join(" ")
-  end
-
-  def self.long_cipher(str)
-    str.length > 5
   end
 
   def self.cipher_legend
