@@ -61,14 +61,12 @@ class CustomSetTest < MiniTest::Unit::TestCase
   end
 
   def test_size
-    skip
     assert_equal 0, CustomSet.new.size
     assert_equal 3, CustomSet.new([1,2,3]).size
     assert_equal 3, CustomSet.new([1,2,3,2]).size
   end
 
   def test_subset?
-    skip
     assert CustomSet.new([1,2,3]).subset?(CustomSet.new([1,2,3]))
     assert CustomSet.new([4,1,2,3]).subset?(CustomSet.new([1,2,3]))
     refute CustomSet.new([4,1,3]).subset?(CustomSet.new([1,2,3]))

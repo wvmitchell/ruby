@@ -4,7 +4,7 @@ class CustomSet
   attr_reader :elements
 
   def initialize(elements=[])
-    @elements = elements
+    @elements = elements.to_a.uniq
   end
 
   def delete(element)
@@ -26,6 +26,10 @@ class CustomSet
 
   def intersection(other)
     CustomSet.new(elements.sort & other.elements.sort)
+  end
+
+  def size
+    elements.length
   end
 
   def disjoint?(other)
