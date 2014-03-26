@@ -14,6 +14,12 @@ class CustomSet
     self
   end
 
+  def put(element)
+    elements << element
+    elements.uniq!
+    self
+  end
+
   def difference(other)
     CustomSet.new(elements.sort - other.elements.sort)
   end

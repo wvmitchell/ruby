@@ -50,7 +50,6 @@ class CustomSetTest < MiniTest::Unit::TestCase
   end
 
   def test_put
-    skip
     assert_equal CustomSet.new([1,2,3,4]),
       CustomSet.new([1,2,4]).put(3)
 
