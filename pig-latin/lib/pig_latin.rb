@@ -11,7 +11,7 @@ class PigLatin
     if word[0..1] == "ye"
       rotation(1, word)
     elsif word[0].vowel? || (word[0] == 'x' && !word[1].vowel?)
-      word + "ay"
+      rotation(0, word)
     elsif %w(squ thr sch).include? word[0..2]
       rotation(3, word)
     elsif %w(ch qu th).include? word[0..1]
