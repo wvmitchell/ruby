@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative 'pig_latin'
+require 'minitest/emoji'
+require_relative '../lib/pig_latin'
 
 class PigLatinTest < MiniTest::Unit::TestCase
 
@@ -8,22 +9,18 @@ class PigLatinTest < MiniTest::Unit::TestCase
   end
 
   def test_other_word_beginning_e
-    skip
     assert_equal "earay", PigLatin.translate("ear")
   end
 
   def test_word_beginning_with_p
-    skip
     assert_equal "igpay", PigLatin.translate("pig")
   end
 
   def test_word_beginning_with_k
-    skip
     assert_equal "oalakay", PigLatin.translate("koala")
   end
 
   def test_word_beginning_with_ch
-    skip
     assert_equal "airchay", PigLatin.translate("chair")
   end
 
