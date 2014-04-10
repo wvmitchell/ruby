@@ -1,9 +1,11 @@
+require 'prime'
+
 class Prime
 
   def self.nth(n)
-    count = 0
-    test = 0
-    2
+    each.with_index do |prime, index|
+      return prime if index+1 == n
+    end
   end
 
 end
