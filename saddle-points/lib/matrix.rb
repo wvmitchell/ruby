@@ -8,6 +8,10 @@ class Matrix
     @matrix
   end
 
+  def columns
+    rows.transpose
+  end
+
   private
 
   def parse(matrix_string)
