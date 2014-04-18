@@ -1,17 +1,15 @@
+require 'forwardable'
+
 class Matrix
 
+  extend Forwardable
+
   attr_reader :matrix
+  alias :rows :matrix
+  def_delegator :rows, :transpose, :columns
 
   def initialize(matrix_string)
     @matrix = parse(matrix_string)
-  end
-
-  def rows
-    matrix
-  end
-
-  def columns
-    rows.transpose
   end
 
   def saddle_points
