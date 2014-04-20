@@ -1,7 +1,6 @@
 require 'forwardable'
 
 class Matrix
-
   extend Forwardable
 
   attr_reader :matrix
