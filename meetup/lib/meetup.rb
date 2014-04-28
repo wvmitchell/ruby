@@ -1,3 +1,5 @@
+require 'humanize'
+
 class Meetup
   attr_reader :month, :year
 
