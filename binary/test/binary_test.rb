@@ -1,6 +1,6 @@
 require 'minitest/autorun'
-require 'minitest/pride'
-require_relative 'binary'
+require 'minitest/emoji'
+require_relative '../lib/binary'
 
 class BinaryTest < MiniTest::Unit::TestCase
   def test_binary_1_is_decimal_1
