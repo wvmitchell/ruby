@@ -14,7 +14,7 @@ class Queens
   end
 
   def draw_board
-    board = 8.times.collect {Array.new(8, 'O')}
+    board = blank_board
     board[white[0]][white[1]] = 'W'
     board[black[0]][black[1]] = 'B'
     board
@@ -36,6 +36,10 @@ class Queens
 
   def diagonal_attack?
     (white[0]-black[0]).abs == (white[1]-black[1]).abs
+  end
+
+  def blank_board
+    8.times.collect {Array.new(8, 'O')}
   end
 
 end
