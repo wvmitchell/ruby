@@ -8,21 +8,13 @@ class SumOfMultiples
 
   def self.to(up_to)
     (0...up_to).inject do |sum, num|
-      if num % 3 == 0 || num % 5 == 0
-        sum + num
-      else
-        sum
-      end
+      (num % 3 == 0 || num % 5 == 0) ? sum + num : sum
     end
   end
 
   def to(up_to)
     (0...up_to).inject do |sum, num|
-      if multiples.any? {|mult| num % mult == 0}
-        sum + num
-      else
-        sum
-      end
+      multiples.any? {|mult| num % mult == 0} ? sum + num : sum
     end
   end
 
