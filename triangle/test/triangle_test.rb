@@ -1,5 +1,6 @@
 require 'minitest/autorun'
-require_relative 'triangle'
+require 'minitest/emoji'
+require_relative '../lib/triangle'
 
 class TriangleTest < MiniTest::Unit::TestCase
   def test_equilateral_triangles_have_equal_sides
