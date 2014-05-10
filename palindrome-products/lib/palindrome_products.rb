@@ -1,8 +1,12 @@
 require 'prime'
+require 'forwardable'
 
 class Palindromes
+  extend Forwardable
 
   attr_reader :max_factor, :min_factor, :generated
+  def_delegator :@generated, :last, :largest
+  def_delegator :@generated, :first, :smallest
 
   def initialize(options)
     @max_factor = options[:max_factor]
@@ -20,14 +24,6 @@ class Palindromes
     end
     @generated = candidates
     @generated.sort!
-  end
-
-  def largest
-    generated.last
-  end
-
-  def smallest
-    generated.first
   end
 
   private
