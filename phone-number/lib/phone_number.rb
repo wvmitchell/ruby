@@ -22,7 +22,7 @@ class PhoneNumber
   private
 
   def valid?
-    !too_short? && !too_long? && !has_leading_foriegn_country_code?
+    valid_length? && !has_leading_foriegn_country_code?
   end
 
   def clean_raw_number
@@ -55,12 +55,8 @@ class PhoneNumber
     current_digits[0] == '1'
   end
 
-  def too_long?
-    current_digits.length > 11
-  end
-
-  def too_short?
-    current_digits.length < 10
+  def valid_length?
+    !(current_digits.length > 11) && !(current_digits.length < 10)
   end
 
 end
