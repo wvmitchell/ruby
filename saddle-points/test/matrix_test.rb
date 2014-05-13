@@ -30,13 +30,11 @@ class MatrixTest < MiniTest::Unit::TestCase
   end
 
   def test_extract_another_column
-    skip
     matrix = Matrix.new("89 1903 3\n18 3 1\n9 4 800")
     assert_equal [1903, 3, 4], matrix.columns[1]
   end
 
   def test_no_saddle_point
-    skip
     matrix = Matrix.new("2 1\n1 2")
     assert_equal [], matrix.saddle_points
   end

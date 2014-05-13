@@ -1,9 +1,10 @@
 class Matrix
 
-  attr_reader :rows
+  attr_reader :rows, :columns
 
   def initialize(matrix)
     @rows = parse(matrix)
+    @columns = rows.transpose
   end
 
   private
