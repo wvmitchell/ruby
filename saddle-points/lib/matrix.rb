@@ -15,7 +15,7 @@ class Matrix
 
   private
 
-  def is_saddle_point?(position)
+  def is_saddle_point? position
     value = rows[position[0]][position[1]]
     rows[position[0]].all? {|test| value >= test} &&
     columns[position[1]].all? {|test| value <= test}
