@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'minitest/pride'
+require 'minitest/emoji'
 require_relative '../lib/grains'
 
 class GrainsTest < MiniTest::Unit::TestCase
@@ -17,22 +17,27 @@ class GrainsTest < MiniTest::Unit::TestCase
   end
 
   def test_square_4
+    skip
     assert_equal 8, Grains.new.square(4)
   end
 
   def test_square_16
+    skip
     assert_equal 32768, Grains.new.square(16)
   end
 
   def test_square_32
+    skip
     assert_equal 2147483648, Grains.new.square(32)
   end
 
   def test_square_64
+    skip
     assert_equal 9223372036854775808, Grains.new.square(64)
   end
 
   def test_total_grains
+    skip
     assert_equal 18446744073709551615, Grains.new.total
   end
 
