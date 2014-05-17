@@ -5,7 +5,6 @@ class Allergies
   def initialize(score)
     @list = []
     compute_allergies(score)
-    list.reverse!
   end
 
   def allergic_to?(allergen)
@@ -18,7 +17,7 @@ class Allergies
     ALLERGENS.each do |allergen, s|
       div, mod = score.divmod ALLERGENS[allergen]
       if div > 0
-        list << allergen.to_s
+        list.unshift allergen.to_s
         compute_allergies(mod)
         break
       end
