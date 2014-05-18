@@ -8,12 +8,14 @@ class Octal
   end
 
   def to_decimal
-    octaldecimal.to_i(8)
+    octaldecimal.chars.reverse.map.with_index do |digit, index|
+      digit.to_i * 8 ** index
+    end.inject(:+)
   end
 
   def check_invalid
-    if octaldecimal.chars.any? {|char| char.to_i > 7}
-      @octaldecimal = "0"
+    if octaldecimal =~ /[a-zA-Z8-9]/
+      @octaldecimal = '0'
     end
   end
 
