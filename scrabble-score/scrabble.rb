@@ -12,11 +12,15 @@ class Scrabble
 
   def score
     letters.inject(0) do |sum, letter|
-      value_key = LETTER_VALUES.keys.find do |key|
-        key.include? letter
-      end
-      sum + LETTER_VALUES[value_key]
+      sum + value(letter)
     end
+  end
+
+  def value(letter)
+    key = LETTER_VALUES.keys.find do |k|
+      k.include? letter
+    end
+    LETTER_VALUES[key]
   end
 
   def parse(word)
