@@ -1,5 +1,6 @@
 require 'minitest/autorun'
 require 'minitest/emoji'
+require 'pry'
 require_relative 'scrabble'
 
 class ScrabbleTest < MiniTest::Unit::TestCase
@@ -16,7 +17,6 @@ class ScrabbleTest < MiniTest::Unit::TestCase
   end
 
   def test_scores_very_short_word
-    skip
     assert_equal 1, Scrabble.new('a').score
   end
 
