@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'minitest/emoji'
 require_relative 'scrabble'
 
 class ScrabbleTest < MiniTest::Unit::TestCase
