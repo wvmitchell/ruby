@@ -29,17 +29,14 @@ class ScrabbleTest < MiniTest::Unit::TestCase
   end
 
   def test_complicated_word_scores_more
-    skip
     assert_equal 22, Scrabble.new("quirky").score
   end
 
   def test_scores_are_case_insensitive
-    skip
     assert_equal 20, Scrabble.new("MULTIBILLIONAIRE").score
   end
 
   def test_convenient_scoring
-    skip
     assert_equal 13, Scrabble.score("alacrity")
   end
 end

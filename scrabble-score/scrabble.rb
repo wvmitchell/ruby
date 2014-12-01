@@ -2,6 +2,10 @@ class Scrabble
 
   attr_reader :letters
 
+  def self.score(word)
+    new(word).score
+  end
+
   def initialize(word)
     @letters = parse(word)
   end
