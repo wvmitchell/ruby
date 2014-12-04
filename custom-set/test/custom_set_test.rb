@@ -1,6 +1,7 @@
 require 'minitest/autorun'
 require 'minitest/emoji'
 require_relative '../lib/custom_set'
+require 'pry'
 
 class CustomSetTest < MiniTest::Unit::TestCase
 
