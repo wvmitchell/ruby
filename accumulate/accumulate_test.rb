@@ -1,4 +1,5 @@
 require 'minitest/autorun'
+require 'minitest/emoji'
 require_relative 'array'
 
 class ArrayTest < MiniTest::Unit::TestCase
